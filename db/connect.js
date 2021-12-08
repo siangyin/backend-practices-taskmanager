@@ -1,10 +1,5 @@
 const mongoose = require("mongoose");
 
-const PW = "11223344";
-const COLLECTION_NAME = "tasks-manager-v2";
-
-const connectionString = `mongodb+srv://admin:${PW}@cluster0.ud1ul.mongodb.net/${COLLECTION_NAME}?retryWrites=true&w=majority`;
-
 // connecting to mongoDB by Mongoose
 // mongoose
 // 	.connect(connectionString)
@@ -13,7 +8,7 @@ const connectionString = `mongodb+srv://admin:${PW}@cluster0.ud1ul.mongodb.net/$
 
 //Refactoring
 const connectDB = (url) => {
-	return mongoose.connect(connectionString).catch((err) => console.log(err));
+	return mongoose.connect(url).catch((err) => console.log(err));
 };
 
 module.exports = connectDB;

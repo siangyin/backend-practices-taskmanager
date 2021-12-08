@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const tasks = require("./routes/task");
 
 const connectDB = require("./db/connect");
+require("dotenv").config();
 
 //static assets
 app.use(express.static("./public"));
@@ -24,7 +25,7 @@ app.get("/hello", (req, res) => {
 
 async function start() {
 	try {
-		await connectDB();
+		await connectDB(process.env.MONGO_URI);
 		app.listen(PORT, (req, res) => {
 			console.log(`app on post ${PORT}`);
 		});
