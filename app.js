@@ -1,9 +1,10 @@
-require("./db/connect");
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 // requiring routes
 const tasks = require("./routes/task");
+
+const connectDB = require("./db/connect");
 
 //static assets
 app.use(express.static("./public"));
@@ -21,6 +22,15 @@ app.get("/hello", (req, res) => {
 	res.status(200).send("<h1>Hello</h1>");
 });
 
-app.listen(PORT, (req, res) => {
-	console.log(`app on post ${PORT}`);
-});
+async function start() {
+	try {
+		await connectDB();
+		app.listen(PORT, (req, res) => {
+			console.log(`app on post ${PORT}`);
+		});
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+start();
