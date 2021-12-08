@@ -1,3 +1,5 @@
+const Task = require("../models/TaskSchema");
+
 const getTasks = (req, res) => {
 	res.status(200).send("get all tasks");
 };
