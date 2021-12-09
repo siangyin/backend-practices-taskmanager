@@ -4,8 +4,10 @@ const getTasks = (req, res) => {
 	res.status(200).send("get all tasks");
 };
 
-const createTask = (req, res) => {
-	res.status(200).send("task created");
+const createTask = async (req, res) => {
+	// console.log(req.body) //{ name: 'boooi', completed: true }
+	const task = await Task.create(req.body);
+	res.status(201).json({ task });
 };
 
 const getTask = (req, res) => {
