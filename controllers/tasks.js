@@ -1,7 +1,12 @@
 const Task = require("../models/TaskSchema");
 
-const getTasks = (req, res) => {
-	res.status(200).send("get all tasks");
+const getTasks = async (req, res) => {
+	try {
+		const tasks = await Task.find({});
+		res.status(200).json({ tasks });
+	} catch (error) {
+		res.status(500).json({ msg: error });
+	}
 };
 
 const createTask = async (req, res) => {
@@ -14,8 +19,21 @@ const createTask = async (req, res) => {
 	}
 };
 
-const getTask = (req, res) => {
-	res.status(200).send(`req for task id: ${req.params.id}`);
+const getTask = async (req, res) => {
+	//const {id}=req.params
+
+	try {
+		const id = req.params.id;
+		const task = await Task.findOne({ _id: id });
+		console.log(task);
+		if (!task) {
+			return res.status(404).json({ msg: `no task id:${id}` });
+		}
+
+		res.status(200).json({ task });
+	} catch (error) {
+		res.status(500).json({ msg: error });
+	}
 };
 
 const updateTask = (req, res) => {
