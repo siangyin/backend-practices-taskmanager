@@ -23,13 +23,11 @@
 ## Web-app Screenshots
 
 ### Home: View/ Delete task
-<img width="500" alt="img" src="https://github.com/siangyin/nodemongoose-taskmanager
-/blob/main/refImg/home.png?raw=true">
+<img width="500" alt="img" src="https://github.com/siangyin/nodemongoose-taskmanager/blob/main/refImg/home.png?raw=true">
 
 
 ### Edit Task
-<img width="500" alt="img" src="https://github.com/siangyin/nodemongoose-taskmanager
-/blob/main/refImg/edit.png?raw=true">
+<img width="500" alt="img" src="https://github.com/siangyin/nodemongoose-taskmanager/blob/main/refImg/edit.png?raw=true">
 
 
   
