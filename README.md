@@ -1,4 +1,4 @@
-# nodemongoose-taskmanager 
+# Task manager 
 ## ✅ 🥳 Node.js &amp; Mongoose practice - CRUD
 
 ```
